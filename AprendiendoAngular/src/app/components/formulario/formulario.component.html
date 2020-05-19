@@ -1,0 +1,56 @@
+<app-slider [name]="'Formulario'" [size]="'small'"></app-slider>
+
+<div class="center">
+  <section id="content">
+
+    <h1 class="subheader">Formulario</h1>
+
+<!--    <div id="datos-al-vuelo" *ngIf="user.name">-->
+<!--      <h2 class="subheader">Datos al vuelo</h2>-->
+<!--      <li>{{user.name}}</li>-->
+<!--      <li>{{user.surname}}</li>-->
+<!--      <li>{{user.biography}}</li>-->
+<!--      <li>{{user.gender}}</li>-->
+<!--    </div>-->
+
+    <form class="mid-form" #userForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" required pattern="[a-zA-Z]+" />
+
+        <small *ngIf="!name.valid && name.touched">El nombre no es válido.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="surname">Apellidos</label>
+        <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required pattern="[a-zA-Z]+" />
+
+        <small *ngIf="!surname.valid && surname.touched">Los apellidos no son válidos.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="biography">Biografia
+        <textarea name="biography" #biography="ngModel" [(ngModel)]="user.biography" required ></textarea>
+        </label>
+
+        <small *ngIf="!biography.valid && biography.touched">La biografía no es válida.</small>
+      </div>
+
+      <div class="form-group radibuttons">
+        <input type="radio" name="gender" value="Hombre" #gender="ngModel" [(ngModel)]="user.gender" required /> Hombre
+        <input type="radio" name="gender" value="Mujer" #gender="ngModel" [(ngModel)]="user.gender" /> Mujer
+        <input type="radio" name="gender" value="Otro" #gender="ngModel" [(ngModel)]="user.gender" /> Otro
+
+        <small *ngIf="!gender.valid && gender.touched">El género no es válido.</small>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <input type="submit" value="Enviar" class="btn btn-success" [disabled]="userForm.invalid" />
+
+    </form>
+
+  </section>
+
+  <app-sidebar></app-sidebar>
+</div>

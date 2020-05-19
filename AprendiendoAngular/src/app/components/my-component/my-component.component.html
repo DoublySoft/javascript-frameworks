@@ -1,0 +1,9 @@
+<h1>{{ title }}</h1>
+<p>{{ comment }}</p>
+
+<button (click)="hideFilms()">Ocultar películas</button>
+<div *ngIf="showFilms">
+  <app-peliculas></app-peliculas>
+</div>
+
+<app-pruebas></app-pruebas>
