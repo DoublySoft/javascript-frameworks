@@ -51,10 +51,16 @@ let controller = {
             // Assign values
             article.title = params.title;
             article.content = params.content;
-            article.image = null;
+
+            if (params.image) {
+                article.image = params.image;
+            } else {
+                article.image = null;
+            }
 
             // Save the object
             article.save((err, articleStored) => {
+
                 if (err || !articleStored) {
                     return res.status(404).send({
                         status: 'success',
@@ -67,6 +73,7 @@ let controller = {
                     status: 'success',
                     article: articleStored
                 });
+
             });
 
         } else {
@@ -227,49 +234,51 @@ let controller = {
         }
 
         // Get file data
-        // let filePath = req.files.file0.path;
-        // console.log(req.file.file0);
-        // let fileSplit = filePath.split('\\'); // For Windows
-        // let fileSplit = filePath.split('/'); // For Linux or macOS
-        // let fileName = fileSplit[2];
-        // let fileExt = fileName.split('\.')[1];
+        let filePath = req.files.file0.path;
+        let fileSplit = filePath.split('\\'); // For Windows
+        // let fileSplit = filePath.split('/'); // For Linux or MacOS
+        let fileName = fileSplit[2];
+        let splitExt = fileName.split('\.')
+        let fileExt = splitExt[1];
 
         // Check if the file as an image
-        // if (fileExt !== 'png' && fileExt !== 'jpg' && fileExt !== 'jpeg' && fileExt !== 'gif') {
-        //
-        //     // Delete uploaded file
-        //     fs.unlink(filePath, (err) => {
-        //         return res.status(200).send({
-        //             status: 'error',
-        //             message: 'The file extension is invalid.'
-        //         });
-        //     });
-        //
-        // } else {
-        //
-        //     // If all are valid, get object id
-        //     let _id = req.params.id;
-        //     Article.findOneAndUpdate({_id: _id}, {image: fileName}, {new: true}, (err, objectUpdated) => {
-        //
-        //         if (err || !objectUpdated) {
-        //             return res.status(200).send({
-        //                 status: 'error',
-        //                 message: 'Error saving file.'
-        //             });
-        //         }
-        //
-        //         return res.status(200).send({
-        //             status: 'success',
-        //             object: objectUpdated
-        //         });
-        //     });
-        //
-        // }
+        if (fileExt !== 'png' && fileExt !== 'jpg' && fileExt !== 'jpeg' && fileExt !== 'gif') {
 
-        return res.status(200).send({
-            status: 'success',
-            files: req.body
-        });
+            // Delete uploaded file
+            fs.unlink(filePath, (err) => {
+                return res.status(200).send({
+                    status: 'error',
+                    message: 'The file extension is invalid.'
+                });
+            });
+
+        } else {
+
+            // If all are valid, get object id
+            let articleId = req.params.id;
+
+            if (articleId) {
+                Article.findOneAndUpdate({_id: articleId}, {image: fileName}, {new: true}, (err, objectUpdated) => {
+
+                    if (err || !objectUpdated) {
+                        return res.status(200).send({
+                            status: 'error',
+                            message: 'Error saving file.'
+                        });
+                    }
+
+                    return res.status(200).send({
+                        status: 'success',
+                        object: objectUpdated
+                    });
+                });
+            } else {
+                return res.status(200).send({
+                    status: 'success',
+                    image: fileName
+                });
+            }
+        }
 
     }, // End uploadFile
 

@@ -1,9 +1,9 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {routing, appRoutingProviders} from "./app.routing";
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
-import {MomentModule} from "angular2-moment";
+import {routing, appRoutingProviders} from './app.routing';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {MomentModule} from 'angular2-moment';
 
 import {AppComponent} from './app.component';
 import {MyComponentComponent} from './components/my-component/my-component.component';
@@ -20,10 +20,11 @@ import {PaginaComponent} from './components/pagina/pagina.component';
 import {ErrorComponent} from './components/error/error.component';
 import {PeliculaComponent} from './components/pelicula/pelicula.component';
 import {EsparPipe} from './pipes/espar.pipe';
-import { ArticlesComponent } from './components/articles/articles.component';
-import { ArticleComponent } from './components/article/article.component';
-import { SearchComponent } from './components/search/search.component';
-import { CreateArticleComponent } from './components/create-article/create-article.component';
+import {ArticlesComponent} from './components/articles/articles.component';
+import {ArticleComponent} from './components/article/article.component';
+import {SearchComponent} from './components/search/search.component';
+import {ArticleNewComponent} from './components/article-new/article-new.component';
+import {AngularFileUploaderModule} from 'angular-file-uploader';
 
 @NgModule({
   declarations: [
@@ -45,9 +46,10 @@ import { CreateArticleComponent } from './components/create-article/create-artic
     ArticlesComponent,
     ArticleComponent,
     SearchComponent,
-    CreateArticleComponent
+    ArticleNewComponent
   ],
   imports: [
+    AngularFileUploaderModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,

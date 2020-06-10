@@ -38,7 +38,7 @@ export class ArticleService {
     return this._http.get(this.url + 'search/' + search)
   }
 
-  createArticle(article): Observable<any> {
+  create(article): Observable<any> {
     let params = JSON.stringify(article);
     let headers = new HttpHeaders().set('Content-type', 'application/json');
 
