@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {Article} from "../models/article";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Article} from '../models/article';
 import {Global} from './global';
 
 @Injectable({
@@ -31,11 +31,11 @@ export class ArticleService {
   }
 
   getArticle(id): Observable<any> {
-    return this._http.get(this.url + 'article/' + id)
+    return this._http.get(this.url + 'article/' + id);
   }
 
   search(search): Observable<any> {
-    return this._http.get(this.url + 'search/' + search)
+    return this._http.get(this.url + 'search/' + search);
   }
 
   create(article): Observable<any> {
@@ -44,5 +44,19 @@ export class ArticleService {
 
     return this._http.post(this.url + 'create-article', params, {headers: headers});
   }
+
+  update(id, article): Observable<any> {
+    let params = JSON.stringify(article);
+    let headers = new HttpHeaders().set('Content-type', 'application/json');
+
+    return this._http.put(this.url + 'article/'+ id, params, {headers: headers});
+  }
+
+  delete(id): Observable<any> {
+    let headers = new HttpHeaders().set('Content-type', 'application/json');
+
+    return this._http.delete(this.url + 'article/' + id, {headers: headers});
+  }
+
 
 }

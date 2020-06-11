@@ -288,7 +288,6 @@ let controller = {
         let pathFile = './upload/articles/' + file;
 
         fs.exists(pathFile, (exists) => {
-            console.log(exists);
             if (exists) {
                 return res.sendFile(path.resolve(pathFile));
             } else {
