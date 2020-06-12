@@ -1,16 +1,36 @@
 import React from 'react';
-import logo from './assets/images/logo.svg';
 import './assets/css/App.css';
 
 // Components
-import MiComponente from "./components/MiComponente";
+import Header from "./components/header/Header";
+import Slider from "./components/slider/Slider";
+import Sidebar from "./components/sidebar/Sidebar";
+import Footer from "./components/footer/Footer";
+import Router from "./Router";
 
 function App() {
+
+    let slideString = "Bienvenido al Curso de React con Víctor Robles de victorroblesweb.es";
+    let buttonString = "Ir al Blog";
     return (
         <div className="App">
-            <header className="App-header">
-                <MiComponente />
-            </header>
+            <Header/>
+
+            <Slider
+                title={slideString}
+                btn={buttonString}/>
+
+            <div className="center">
+                <Router />
+
+                {/*<Peliculas />*/}
+
+                <Sidebar/>
+
+                <div className="clearfix"/>
+            </div>
+
+            <Footer/>
         </div>
     );
 }
