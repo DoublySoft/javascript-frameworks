@@ -20,22 +20,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c8dbb88-0805-4d35-9356-bae0e87d648f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MensajeEstatico.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer/Footer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/SeccionPruebas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/article/Articulos.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/pelicula/Pelicula.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/pelicula/Peliculas.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sidebar/Sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/slider/Slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Maquetacion/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Formulario.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Blog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/article/Article.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Router.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MiComponente.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MiComponente.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/SeccionPruebas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/SeccionPruebas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/article/Articulos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/article/Articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/pelicula/Peliculas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/pelicula/Peliculas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/slider/Slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/Slider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Maquetacion/React/formulario.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Maquetacion/React/formulario.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/sections/pelicula" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/sections/article" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -75,15 +81,16 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components/sections/pelicula" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/components/sections/pelicula" />
       <recent name="$PROJECT_DIR$/src/components/footer" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="C:\Users\danie\Projects\Learning\learning-javascript-frameworks\AprendiendoReact\src\assets\css" />
       <recent name="C:\Users\danie\Projects\Learning\learning-javascript-frameworks\AprendiendoReact\src\assets\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\danie\Projects\Learning\learning-javascript-frameworks\AprendiendoReact\src\components\sections\article" />
+      <recent name="$PROJECT_DIR$/src/components/sections/pelicula" />
     </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
@@ -128,6 +135,7 @@
       <workItem from="1591916858530" duration="2729000" />
       <workItem from="1591950112727" duration="168000" />
       <workItem from="1591950296507" duration="9405000" />
+      <workItem from="1592034132200" duration="4427000" />
     </task>
     <servers />
   </component>
@@ -151,29 +159,33 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1375" y="9" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1591917186671" />
+    <state x="1650" y="451" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591982337322">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1650" y="451" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1591982337322" />
     <state x="1701" y="446" key="FileChooserDialogImpl" timestamp="1591916947302">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1701" y="446" key="FileChooserDialogImpl/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1591916947302" />
-    <state width="1053" height="248" key="GridCell.Tab.0.bottom" timestamp="1591967090603">
-      <screen x="0" y="23" width="1920" height="1119" />
+    <state width="1257" height="246" key="GridCell.Tab.0.bottom" timestamp="1592042556067">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="401" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1591920090439" />
+    <state width="1257" height="246" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1592042556067" />
     <state width="1053" height="248" key="GridCell.Tab.0.bottom/0.23.1920.1119@0.23.1920.1119" timestamp="1591967090603" />
-    <state width="1053" height="248" key="GridCell.Tab.0.center" timestamp="1591967090601">
-      <screen x="0" y="23" width="1920" height="1119" />
+    <state width="1257" height="246" key="GridCell.Tab.0.center" timestamp="1592042556067">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="401" key="GridCell.Tab.0.center/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1591920090439" />
+    <state width="1257" height="246" key="GridCell.Tab.0.center/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1592042556067" />
     <state width="1053" height="248" key="GridCell.Tab.0.center/0.23.1920.1119@0.23.1920.1119" timestamp="1591967090601" />
-    <state width="1053" height="248" key="GridCell.Tab.0.left" timestamp="1591967090600">
-      <screen x="0" y="23" width="1920" height="1119" />
+    <state width="1257" height="246" key="GridCell.Tab.0.left" timestamp="1592042556067">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="401" key="GridCell.Tab.0.left/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1591920090438" />
+    <state width="1257" height="246" key="GridCell.Tab.0.left/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1592042556067" />
     <state width="1053" height="248" key="GridCell.Tab.0.left/0.23.1920.1119@0.23.1920.1119" timestamp="1591967090600" />
-    <state width="1053" height="248" key="GridCell.Tab.0.right" timestamp="1591967090602">
-      <screen x="0" y="23" width="1920" height="1119" />
+    <state width="1257" height="246" key="GridCell.Tab.0.right" timestamp="1592042556067">
+      <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1257" height="401" key="GridCell.Tab.0.right/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1591920090439" />
+    <state width="1257" height="246" key="GridCell.Tab.0.right/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1592042556067" />
     <state width="1053" height="248" key="GridCell.Tab.0.right/0.23.1920.1119@0.23.1920.1119" timestamp="1591967090602" />
     <state x="1113" y="481" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1591967008685">
       <screen x="0" y="23" width="1920" height="1119" />

@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import Pelicula from "./Pelicula";
+import Sidebar from "../../sidebar/Sidebar";
+import Slider from "../../slider/Slider";
 
 class Peliculas extends Component {
 
@@ -25,10 +27,7 @@ class Peliculas extends Component {
         this.setState({
             favorita: {},
             peliculas: [
-                {
-                    title: "Batman vs Superman",
-                    image: "https://www.comicverso.com/wp-content/uploads/2019/12/destacada-batmanvssuperman.jpg"
-                },
+                {title: "Batman vs Superman", image: "https://www.comicverso.com/wp-content/uploads/2019/12/destacada-batmanvssuperman.jpg"},
                 {title: "Gran Torino", image: "https://pics.filmaffinity.com/Gran_Torino-111185177-large.jpg"},
                 {title: "Looper", image: "https://images-na.ssl-images-amazon.com/images/I/71YHgMctCEL._SL1000_.jpg"}
             ]
@@ -55,29 +54,42 @@ class Peliculas extends Component {
         }
 
         return (
-            <div id="content" className="peliculas">
-                <h2 className="subheader">Películas</h2>
-                <p>Selección de películas favoritas de {this.state.nombre}</p>
-                <p>
-                    <button onClick={this.cambiarTitulo}>Cambia títulos</button>
-                </p>
+            <React.Fragment>
+                <Slider
+                    title="Formularo de contacto"
+                    size="slider-small"/>
 
-                {favorita}
+                <div className="center">
+                    <div id="content">
+                        <h2 className="subheader">Películas</h2>
+                        <p>Selección de películas favoritas de {this.state.nombre}</p>
+                        <p>
+                            <button onClick={this.cambiarTitulo}>Cambia títulos</button>
+                        </p>
 
-                <div id="articles">
-                    {
-                        this.state.peliculas.map((pelicula, i) => {
-                            return (
-                                <Pelicula
-                                    key={i}
-                                    pelicula={pelicula}
-                                    indice={i}
-                                    marcarFavorita={this.favorita}/>
-                            )
-                        })
-                    }
+                        {favorita}
+
+                        <div id="articles">
+                            {
+                                this.state.peliculas.map((pelicula, i) => {
+                                    return (
+                                        <Pelicula
+                                            key={i}
+                                            pelicula={pelicula}
+                                            indice={i}
+                                            marcarFavorita={this.favorita}/>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+
+                    <Sidebar
+                        blog="true"/>
+
+                    <div className="clearfix"/>
                 </div>
-            </div>
+            </React.Fragment>
         );
     }
 }

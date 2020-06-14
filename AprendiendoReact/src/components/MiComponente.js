@@ -12,14 +12,23 @@ class MiComponente extends Component {
         return (
             <React.Fragment>
                 <h1>{'Receta: ' + receta.nombre}</h1>
-                <h2>{'Calorías: ' +receta.calorias}</h2>
+                <h2>{'Calorías: ' + receta.calorias}</h2>
                 <ol>
                     {
                         receta.ingredientes.map((ingrediente, i) => {
-                            return(<li>{ingrediente}</li>)
+                            return (<li>{ingrediente}</li>)
                         })
                     }
                 </ol>
+                <hr/>
+                {
+                    this.props.saludo &&
+                    <React.Fragment>
+                        <h1>Desde una prop: </h1>
+                        <h3>{this.props.saludo}</h3>
+                    </React.Fragment>
+                }
+
             </React.Fragment>
         );
     }

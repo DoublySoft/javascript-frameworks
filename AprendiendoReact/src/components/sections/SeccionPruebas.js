@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Articulos from "./article/Articulos";
+import Articles from "./article/Articles";
 
 class SeccionPruebas extends Component {
 
@@ -26,9 +26,9 @@ class SeccionPruebas extends Component {
     render() {
         return (
             <section id="content">
-                <Articulos/>
-                <Articulos/>
-                <Articulos/>
+                <Articles/>
+                <Articles/>
+                <Articles/>
                 <h2 className="subheader">Estado</h2>
                 <p>Contado: {this.state.contador}</p>
                 <p>
