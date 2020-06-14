@@ -20,28 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c8dbb88-0805-4d35-9356-bae0e87d648f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Error.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Formulario.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Blog.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/Home.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/sections/article/Article.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_06_2020,_10_36_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_14_06_2020__10_36__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/sections/article/CreateArticle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Router.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/css/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MiComponente.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MiComponente.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/SeccionPruebas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/SeccionPruebas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/article/Articulos.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/article/Articles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sections/pelicula/Peliculas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/pelicula/Peliculas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/article/Article.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/article/Article.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/article/Articles.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/article/Articles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sections/pelicula/Pelicula.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sections/pelicula/Pelicula.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sidebar/Sidebar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/slider/Slider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/slider/Slider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Backend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Maquetacion/React/formulario.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Maquetacion/React/formulario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/upload/articles/56IjTYbVdbsdc4ycVi0W7PgY.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/upload/articles/Bt_THRq92BK1oi8onaH0H262.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/upload/articles/DogH3rqw7_te1ZpYmz1WPFXi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/upload/articles/Q9SGxDV1CLoOTJo_OlBUi3qu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/upload/articles/RQvuumWBeRGNI7u7A-c95zbS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/upload/articles/WSMKMoWBvg0aCxDPL4_q7efL.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/upload/articles/eDnyksCQwaR0KUaEB5y5Pu_W.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/upload/articles/oDtquqe9l2ZHEdVLr6kpRbb-.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Backend/upload/articles/uRAsSsNnyfuF0BdC77kuJWEt.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,26 +169,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1701" y="446" key="FileChooserDialogImpl/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1591916947302" />
-    <state width="1257" height="246" key="GridCell.Tab.0.bottom" timestamp="1592042556067">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1053" height="248" key="GridCell.Tab.0.bottom" timestamp="1592138814561">
+      <screen x="0" y="23" width="1920" height="1119" />
     </state>
     <state width="1257" height="246" key="GridCell.Tab.0.bottom/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1592042556067" />
-    <state width="1053" height="248" key="GridCell.Tab.0.bottom/0.23.1920.1119@0.23.1920.1119" timestamp="1591967090603" />
-    <state width="1257" height="246" key="GridCell.Tab.0.center" timestamp="1592042556067">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1053" height="248" key="GridCell.Tab.0.bottom/0.23.1920.1119@0.23.1920.1119" timestamp="1592138814561" />
+    <state width="1053" height="248" key="GridCell.Tab.0.center" timestamp="1592138814560">
+      <screen x="0" y="23" width="1920" height="1119" />
     </state>
     <state width="1257" height="246" key="GridCell.Tab.0.center/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1592042556067" />
-    <state width="1053" height="248" key="GridCell.Tab.0.center/0.23.1920.1119@0.23.1920.1119" timestamp="1591967090601" />
-    <state width="1257" height="246" key="GridCell.Tab.0.left" timestamp="1592042556067">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1053" height="248" key="GridCell.Tab.0.center/0.23.1920.1119@0.23.1920.1119" timestamp="1592138814560" />
+    <state width="1053" height="248" key="GridCell.Tab.0.left" timestamp="1592138814559">
+      <screen x="0" y="23" width="1920" height="1119" />
     </state>
     <state width="1257" height="246" key="GridCell.Tab.0.left/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1592042556067" />
-    <state width="1053" height="248" key="GridCell.Tab.0.left/0.23.1920.1119@0.23.1920.1119" timestamp="1591967090600" />
-    <state width="1257" height="246" key="GridCell.Tab.0.right" timestamp="1592042556067">
-      <screen x="0" y="0" width="2560" height="1400" />
+    <state width="1053" height="248" key="GridCell.Tab.0.left/0.23.1920.1119@0.23.1920.1119" timestamp="1592138814559" />
+    <state width="1053" height="248" key="GridCell.Tab.0.right" timestamp="1592138814561">
+      <screen x="0" y="23" width="1920" height="1119" />
     </state>
     <state width="1257" height="246" key="GridCell.Tab.0.right/0.0.2560.1400/-1600.1247.1600.860@0.0.2560.1400" timestamp="1592042556067" />
-    <state width="1053" height="248" key="GridCell.Tab.0.right/0.23.1920.1119@0.23.1920.1119" timestamp="1591967090602" />
+    <state width="1053" height="248" key="GridCell.Tab.0.right/0.23.1920.1119@0.23.1920.1119" timestamp="1592138814561" />
+    <state x="1081" y="215" width="604" height="735" key="find.popup" timestamp="1592134766727">
+      <screen x="0" y="23" width="1920" height="1119" />
+    </state>
+    <state x="1081" y="215" width="604" height="735" key="find.popup/0.23.1920.1119@0.23.1920.1119" timestamp="1592134766727" />
     <state x="1113" y="481" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1591967008685">
       <screen x="0" y="23" width="1920" height="1119" />
     </state>

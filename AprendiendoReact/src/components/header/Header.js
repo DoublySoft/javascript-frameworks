@@ -20,7 +20,7 @@ class Header extends Component {
                     <nav id="menu">
                         <ul>
                             <li>
-                                <NavLink to="/home" activeClassName="active">Inicio</NavLink>
+                                <NavLink to="/" activeClassName="active">Inicio</NavLink>
                             </li>
                             <li>
                                 <NavLink to="/blog" activeClassName="active">Blog</NavLink>
@@ -38,7 +38,7 @@ class Header extends Component {
                     </nav>
 
                     {/*LIMPIAR FLOTADOS*/}
-                    <div className="clearfix"></div>
+                    <div className="clearfix"/>
                 </div>
             </header>
         );

@@ -2,85 +2,100 @@ import React, {Component} from "react";
 import axios from "axios";
 import Global from "../../../Global";
 import Moment from "react-moment";
-import "moment/locale/es";
+import Sidebar from "../../sidebar/Sidebar";
+import {Link} from "react-router-dom";
 
 class Article extends Component {
 
     url = Global.urlApi;
-    state = {
-        articles: [],
-        status: null
-    };
 
-    componentWillMount() {
-        this.getArticles();
+    state = {
+        article: {},
+        status: null
     }
 
-    getArticles = () => {
-        console.log(this.url)
-        axios.get(this.url + "articles")
+    constructor(props) {
+        super(props);
+
+        this.getArticle();
+    }
+
+    getArticle = () => {
+        let id = this.props.match.params.id
+
+        axios.get(this.url + 'article/' + id)
             .then(res => {
-                return (
-                    this.setState({
-                        articles: res.data.articles,
-                        status: 'success'
-                    })
-                )
+                this.setState({
+                    article: res.data.article,
+                    status: 'success'
+                })
+            })
+            .catch(err => {
+                this.setState({
+                    article: false,
+                    status: 'success'
+                });
             });
     }
 
     render() {
 
-        if (this.state.articles.length >= 1) {
+        let article = this.state.article
 
-            let listArticles = this.state.articles.map((article) => {
-                return (
-                    <article className="article-item article-detail">
-                        <div className="image-wrap">
-                            {
-                                article.image !== null ? (
-                                    <img
-                                        src={this.url + 'get-file/' + article.image}
-                                        alt={article.title}/>
-                                ) : (
-                                    <img
-                                        src="https://unhabitatmejor.leroymerlin.es/sites/default/files/styles/header_category/public/2018-10/4%20paisaje%20macedonia.jpg?itok=AELknmF8"
-                                        alt={article.title}/>
-                                )
-                            }
+        return (
+            <div className="center">
+                <section id="content">
+                    {
+                        this.state.article &&
+                        <article className="article-item article-detail">
+                            <div className="image-wrap">
+                                {
+                                    article.image !== null ? (
+                                        <img
+                                            src={this.url + 'get-file/' + article.image}
+                                            alt={article.title}/>
+                                    ) : (
+                                        <img
+                                            src="https://unhabitatmejor.leroymerlin.es/sites/default/files/styles/header_category/public/2018-10/4%20paisaje%20macedonia.jpg?itok=AELknmF8"
+                                            alt={article.title}/>
+                                    )
+                                }
+                            </div>
+
+                            <h1 className="subheader">{article.title}</h1>
+                            <span className="date"><Moment locale="es" fromNow>{article.date}</Moment></span>
+                            <p>{article.content}</p>
+
+                            <Link to={'/'} className="btn btn-warning">Editar</Link>
+                            <Link to={'/'} className="btn btn-danger">Eliminar</Link>
+
+                            <div className="clearfix"/>
+                        </article>
+                    }
+
+                    {
+                        !this.state.article &&
+                        <div className="article">
+                            <h2 className="subheader">El artículo no existe</h2>
+                            <p>Inténtalo de nuevo más tarde</p>
                         </div>
+                    }
 
-                        <h1 className="subheader">{article.title}</h1>
-                        <span className="date">
-                            <Moment locale="es" fromNow>{article.date}</Moment>
-                        </span>
-                        <p>{article.content}</p>
+                    {
+                        this.state.status == null &&
+                        <div className="article">
+                            <h2 className="subheader">Buscando el artículo</h2>
+                            <p>Cargando...</p>
+                        </div>
+                    }
+                </section>
 
-                        <div className="clearfix"/>
-                    </article>
-                )
-            })
+                <Sidebar
+                    blog="true"/>
 
-            return (
-                <div id="articles">
-                    {listArticles}
-                </div>
-            )
-        } else if (this.state.articles.length === 0 && this.state.status === 'success') {
-            return (
-                <div id="articles">
-                    <h2 className="subheader">No hay artículos para mostrar</h2>
-                    <p>Todavía no hay contenido en esta sección</p>
-                </div>
-            )
-        } else {
-            return (
-                <div id="articles">
-                    <h2 className="subheader">Cargando...</h2>
-                    <p>Espere mientras carga el contenido</p>
-                </div>
-            )
-        }
+                <div className="clearfix"/>
+            </div>
+        )
     }
 }
 

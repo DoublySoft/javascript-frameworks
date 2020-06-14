@@ -1,6 +1,6 @@
 import React from 'react';
 import './assets/css/App.css';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 
 // Components
 import Error from "./components/Error";
@@ -12,6 +12,7 @@ import Peliculas from "./components/sections/pelicula/Peliculas";
 import Formulario from "./components/Formulario";
 import Article from "./components/sections/article/Article";
 import Search from "./components/Search";
+import CreateArticle from "./components/sections/article/CreateArticle";
 
 function App() {
 
@@ -20,10 +21,17 @@ function App() {
             <Header/>
 
             <Switch>
-                <Route exact path="/home" component={Home}/>
+                <Route exact path="/" component={Home}/>
                 <Route exact path="/blog" component={Blog}/>
                 <Route exact path="/blog/articulo/:id" component={Article}/>
+                <Route exact path="/blog/crear-articulo" component={CreateArticle}/>
                 <Route exact path="/blog/busqueda/:search" component={Search}/>
+                <Route exact path="/redirect/:search" render={(props) => {
+                    let search = props.match.params.search;
+                    return (
+                        <Redirect to={'/blog/busqueda/' + search} />
+                        )
+                }}/>
                 <Route exact path="/formulario" component={Formulario}/>
                 <Route exact path="/peliculas" render={Peliculas}/>
                 <Route exact path="/pruebas/:nombre/:apellidos?" render={(props) => {

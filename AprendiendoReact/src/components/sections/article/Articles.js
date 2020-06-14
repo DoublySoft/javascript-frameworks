@@ -13,14 +13,16 @@ class Articles extends Component {
         status: null
     };
 
-    componentWillMount() {
+    constructor(props) {
+        super(props);
+
         let home = this.props.home;
         let search = this.props.search;
 
         if (home === 'true') {
             this.getLastArticles();
         } else if (search) {
-            this.getSearchArticles();
+            this.getSearchArticles(search);
         } else {
             this.getArticles();
         }
@@ -37,8 +39,24 @@ class Articles extends Component {
             });
     }
 
-    getLastArticles = (search) => {
+    getLastArticles = () => {
         console.log(this.url)
+        axios.get(this.url + "articles/last")
+            .then(res => {
+                this.setState({
+                    articles: res.data.articles,
+                    status: 'success'
+                });
+            })
+            .catch(err => {
+                this.setState({
+                    articles: [],
+                    status: 'success'
+                });
+            });
+    }
+
+    getSearchArticles = (search) => {
         axios.get(this.url + "search/" + search)
             .then(res => {
                 if (res.data.articles) {
@@ -55,24 +73,13 @@ class Articles extends Component {
             });
     }
 
-    getSearchArticles = () => {
-        console.log(this.url)
-        axios.get(this.url + "articles/last")
-            .then(res => {
-                this.setState({
-                    articles: res.data.articles,
-                    status: 'success'
-                });
-            });
-    }
-
     render() {
 
         if (this.state.articles.length >= 1) {
 
             let listArticles = this.state.articles.map((article) => {
                 return (
-                    <article className="article-item" id="article-template">
+                    <article key={article._id} className="article-item" id="article-template">
                         <div className="image-wrap">
                             {
                                 article.image !== null ? (
@@ -106,15 +113,13 @@ class Articles extends Component {
         } else if (this.state.articles.length === 0 && this.state.status === 'success') {
             return (
                 <div id="articles">
-                    <h2 className="subheader">No hay artículos para mostrar</h2>
-                    <p>Todavía no hay contenido en esta sección</p>
+                    <p>No hay artículos para mostrar</p>
                 </div>
             )
         } else {
             return (
                 <div id="articles">
-                    <h2 className="subheader">Cargando...</h2>
-                    <p>Espere mientras carga el contenido</p>
+                    <p>Cargando...</p>
                 </div>
             )
         }
