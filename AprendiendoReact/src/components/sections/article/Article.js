@@ -1,9 +1,10 @@
 import React, {Component} from "react";
 import axios from "axios";
 import Global from "../../../Global";
+import {Link, Redirect} from "react-router-dom";
 import Moment from "react-moment";
 import Sidebar from "../../sidebar/Sidebar";
-import {Link} from "react-router-dom";
+import swal from "sweetalert";
 
 class Article extends Component {
 
@@ -38,7 +39,43 @@ class Article extends Component {
             });
     }
 
+    actualizeArticle = (id) => {
+
+    }
+
+    deleteArticle = (id) => {
+        swal({
+            title: 'Borrando artículo',
+            text: '¿Estás seguro de que quieres eliminar el artículo?',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (willDelete) {
+                swal("Poof! Tu artículo fue borrado!", {
+                    icon: "success",
+                });
+
+                axios.delete(this.url + 'article/' + id)
+                    .then(res => {
+                        this.setState({
+                            article: res.data.article,
+                            status: 'deleted'
+                        });
+                    });
+            } else {
+                swal("Tu artículo está a salvo!", {
+                    icon: "success",
+                });
+            }
+        });
+    }
+
     render() {
+
+        if (this.state.status === 'deleted') {
+            return <Redirect to={'/blog'}/>;
+        }
 
         let article = this.state.article
 
@@ -66,8 +103,13 @@ class Article extends Component {
                             <span className="date"><Moment locale="es" fromNow>{article.date}</Moment></span>
                             <p>{article.content}</p>
 
-                            <Link to={'/'} className="btn btn-warning">Editar</Link>
-                            <Link to={'/'} className="btn btn-danger">Eliminar</Link>
+                            <Link to={'/blog/editar-articulo/' + article._id} className="btn btn-warning">Editar</Link>
+                            <button onClick={
+                                () => {
+                                    this.deleteArticle(article._id);
+                                }
+                            } className="btn btn-danger">Eliminar
+                            </button>
 
                             <div className="clearfix"/>
                         </article>

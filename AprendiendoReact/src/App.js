@@ -13,6 +13,7 @@ import Formulario from "./components/Formulario";
 import Article from "./components/sections/article/Article";
 import Search from "./components/Search";
 import CreateArticle from "./components/sections/article/CreateArticle";
+import EditArticle from "./components/sections/article/EditArticle";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
                 <Route exact path="/blog" component={Blog}/>
                 <Route exact path="/blog/articulo/:id" component={Article}/>
                 <Route exact path="/blog/crear-articulo" component={CreateArticle}/>
+                <Route exact path="/blog/editar-articulo/:id" component={EditArticle}/>
                 <Route exact path="/blog/busqueda/:search" component={Search}/>
                 <Route exact path="/redirect/:search" render={(props) => {
                     let search = props.match.params.search;

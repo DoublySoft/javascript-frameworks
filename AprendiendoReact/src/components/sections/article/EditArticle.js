@@ -6,9 +6,12 @@ import Global from "../../../Global";
 import SimpleReactValidator from "simple-react-validator";
 import swal from 'sweetalert';
 
-class CreateArticle extends Component {
+class EditArticle extends Component {
 
     url = Global.urlApi;
+
+    articleId = null;
+
     titleRef = React.createRef();
     contentRef = React.createRef();
 
@@ -22,6 +25,17 @@ class CreateArticle extends Component {
         super(props);
 
         this.validator = new SimpleReactValidator(Global.messageValidator);
+        this.articleId = this.props.match.params.id;
+        this.getArticle(this.articleId);
+    }
+
+    getArticle = (id) => {
+        axios.get(this.url + 'article/' + id)
+            .then(res => {
+                this.setState({
+                    article: res.data.article
+                })
+            })
     }
 
     saveArticle = (e) => {
@@ -32,7 +46,7 @@ class CreateArticle extends Component {
         if (this.validator.allValid()) {
 
             // Save article with http
-            axios.post(this.url + 'create-article', this.state.article)
+            axios.put(this.url + 'article' + this.articleId, this.state.article)
                 .then(res => {
                     if (res.data.article) {
                         this.setState({
@@ -41,8 +55,8 @@ class CreateArticle extends Component {
                         });
 
                         swal(
-                            'Articulo creado',
-                            'El artículo ha sido creado correctamente',
+                            'Articulo actualizado',
+                            'El artículo ha sido actualizado correctamente',
                             'success'
                         )
 
@@ -103,7 +117,8 @@ class CreateArticle extends Component {
         this.setState({
             article: {
                 title: this.titleRef.current.value,
-                content: this.contentRef.current.value
+                content: this.contentRef.current.value,
+                image: this.state.article.image
             }
         })
 
@@ -126,32 +141,57 @@ class CreateArticle extends Component {
         return (
             <div className="center">
                 <section id="content">
-                    <h1 className="subheader">Crear artículo</h1>
+                    <h1 className="subheader">Editar artículo</h1>
 
-                    <form className="mid-form" onSubmit={this.saveArticle}>
-                        <div className="form-group">
-                            <label htmlFor="articleTitle">Título</label>
-                            <input type="text" name="title" id="articleTitle" ref={this.titleRef}
-                                   onChange={this.changeState} />
-                            {this.validator.message('title', this.state.article.title, 'required|alpha_num_space')}
-                        </div>
+                    {
+                        this.state.article.title &&
+                        <form className="mid-form" onSubmit={this.saveArticle}>
+                            <div className="form-group">
+                                <label htmlFor="articleTitle">Título</label>
+                                <input type="text" name="title" id="articleTitle"
+                                       defaultValue={this.state.article.title} ref={this.titleRef}
+                                       onChange={this.changeState}/>
+                                {this.validator.message('title', this.state.article.title, 'required|alpha_num_space')}
+                            </div>
 
-                        <div className="form-group">
-                            <label htmlFor="articleContent">Contenido</label>
-                            <textarea name="content" id=" articleContent" ref={this.contentRef}
-                                      onChange={this.changeState} />
-                            {this.validator.message('content', this.state.article.content, 'required|alpha_num_space')}
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="articleContent">Contenido</label>
+                                <textarea name="content" id=" articleContent" defaultValue={this.state.article.content}
+                                          ref={this.contentRef}
+                                          onChange={this.changeState}/>
+                                {this.validator.message('content', this.state.article.content, 'required|alpha_num_space')}
+                            </div>
 
-                        <div className="form-group">
-                            <label htmlFor="articleImage">Imagen</label>
-                            <input type="file" name="file0" id="articleImage" onChange={this.changeFile} />
-                        </div>
 
-                        <div className="clearfix"/>
 
-                        <input type="submit" value="Guardar" className="btn btn-success"/>
-                    </form>
+                            <div className="form-group">
+                                <label htmlFor="articleImage">Imagen</label>
+                                <div className="image-wrap">
+                                    {
+                                        this.state.article.image !== null ? (
+                                            <img
+                                                src={this.url + 'get-file/' + this.state.article.image}
+                                                alt={this.state.article.title}/>
+                                        ) : (
+                                            <img
+                                                src="https://unhabitatmejor.leroymerlin.es/sites/default/files/styles/header_category/public/2018-10/4%20paisaje%20macedonia.jpg?itok=AELknmF8"
+                                                alt={this.state.article.title}/>
+                                        )
+                                    }
+                                </div>
+                                <input type="file" name="file0" id="articleImage" onChange={this.changeFile}/>
+                            </div>
+
+                            <div className="clearfix"/>
+
+                            <input type="submit" value="Guardar" className="btn btn-success"/>
+                        </form>
+                    }
+
+                    {
+                        !this.state.article.title &&
+                        <h1 className="subheader">Cargando...</h1>
+                    }
 
                 </section>
 
@@ -164,4 +204,4 @@ class CreateArticle extends Component {
     }
 }
 
-export default CreateArticle;
+export default EditArticle;
